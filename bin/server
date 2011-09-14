@@ -3,7 +3,7 @@
 var sys = require('sys'),
     path = require('path'),
     optimist = require('optimist'),
-    delayqueue = require(path.join('..', 'lib', 'delayqueue'));
+    delayQueue = require(path.join('..', 'lib', 'delay-queue'));
 
 var argv = optimist.usage('Runs the delay queue server.', {
         'host': {
@@ -64,7 +64,7 @@ if (argv.h || argv.help) {
       ca: argv.ca
     };
 
-    delayqueue.start(options, function (err, server) {
+    delayQueue.start(options, function (err, server) {
       if (err) {
         return sys.puts('Error starting delay queue server: ' + err.message);
       }
