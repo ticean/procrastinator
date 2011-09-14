@@ -1,0 +1,76 @@
+#!/usr/bin/env node
+
+var sys = require('sys'),
+    path = require('path'),
+    optimist = require('optimist'),
+    delayqueue = require(path.join('..', 'lib', 'delayqueue'));
+
+var argv = optimist.usage('Runs the delay queue server.', {
+        'host': {
+          describe: 'Hostname that you want the server to run on.',
+          default: '127.0.0.1',
+        },
+        'port': {
+          describe: 'Port that you want the server to run on.',
+          default: 8000,
+        },
+        'setup': {
+          describe: 'Indicates we should configure the database first.',
+          boolean: true,
+          default: false,
+        },
+        'auth': {
+          describe: 'user:password combo to use for HTTP Basic Auth.',
+          default: "",
+        },
+        'secure': {
+          describe: 'Enable and require secure HTTPS connections.',
+          boolean: true,
+          default: false,
+        },
+        'key': {
+          describe: 'Private key for SSL.',
+          default: '../cert/privatekey.pem',
+        },
+        'cert': {
+          describe: 'Certificate for SSL.',
+          short: 'c',
+          default: '../cert/certificate.pem',
+        },
+        'ca': {
+          describe: 'Certificate-Authority for SSL. Multiple values allowed',
+          default: [],
+        },
+        'help': {
+          describe: 'You\'re looking at it.',
+          short: 'h',
+          boolean: false,
+        },
+      }).argv;
+    
+
+if (argv.h || argv.help) {
+  optimist.showHelp();
+} else {
+
+    var options = {
+      host: argv.host,
+      port: argv.port,
+      setup: argv.setup,
+      basicAuth: argv.auth || false,
+      secure: argv.secure,
+      key: argv.key,
+      cert: argv.cert,
+      ca: argv.ca
+    };
+
+    delayqueue.start(options, function (err, server) {
+      if (err) {
+        return sys.puts('Error starting delay queue server: ' + err.message);
+      }
+
+      var protocol = options.secure? 'https':'http';
+      sys.puts('Delay queue server is running. Listening on ' + protocol + '://' + options.host + ':' + options.port);
+    });
+
+}
