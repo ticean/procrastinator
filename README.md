@@ -1,9 +1,29 @@
-Delay Queue
+Procrastinator
 ======================
 
-The delay queue is a simple server written in Node.js that accepts 
-items, and asynchronously queues them for a period of time.
+Why do now what you could put off for later?
 
-The delay queue doesn't perform any actual work. Instead it invokes
-callbacks to wherever you'd like.
+Procrastinator is a simple queue built with Node.js. It asynchronously queues 
+messages for some time, and calls a webhook when time's up. 
+
+Like a good procrastinator. It doesn't perform any actual work. It just puts it off for later.
+
+
+## Why Procrastinate?
+
+Stop polling. Event based procrastination is best.
+
+
+## Requirements
+
+All the requirements are available via NPM.
+
+- winston  Logging.
+- journey  Routing for the API.
+- optimist Option parsing.
+- hashlib  SHA1 id's.
+- vows     Running tests.
+
+
+
 

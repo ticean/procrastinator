@@ -3,7 +3,7 @@
 var sys = require('sys'),
     path = require('path'),
     optimist = require('optimist'),
-    delayQueue = require(path.join('..', 'lib', 'delay-queue'));
+    procrastinator = require(path.join('..', 'lib', 'procrastinator'));
 
 var argv = optimist.usage('Runs the delay queue server.', {
         'host': {
@@ -64,13 +64,13 @@ if (argv.h || argv.help) {
       ca: argv.ca
     };
 
-    delayQueue.start(options, function (err, server) {
+    procrastinator.start(options, function (err, server) {
       if (err) {
-        return sys.puts('Error starting delay queue server: ' + err.message);
+        return sys.puts('Error starting procrastinator. Feel free to fix this later: ' + err.message);
       }
 
       var protocol = options.secure? 'https':'http';
-      sys.puts('Delay queue server is running. Listening on ' + protocol + '://' + options.host + ':' + options.port);
+      sys.puts('Procrastinator is ready to put things off. Listening on ' + protocol + '://' + options.host + ':' + options.port);
     });
 
 }
