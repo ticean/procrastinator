@@ -7,20 +7,15 @@ messages for some time, and calls a webhook when time's up.
 It doesn't perform any actual work. It just puts it off for later.
 
 
-## Why Procrastinate?
-
-Stop polling. Event based procrastination is best.
-
-
 ## Requirements
 
 All the requirements are available via NPM.
 
-- winston  Logging.
-- journey  Routing for the API.
-- optimist Option parsing.
-- hashlib  SHA1 id's.
-- vows     Running tests.
+- **winston**  Logging.
+- **journey**  Routing for the API.
+- **optimist** Option parsing.
+- **hashlib**  SHA1 id's.
+- **vows**     Running tests.
 
 
 
