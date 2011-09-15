@@ -1,1 +1,5 @@
 /appConfig.js
+/cert/certificate.pem
+/cert/certrequest.csr
+/cert/privatekey.pem
+
