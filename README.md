@@ -1,12 +1,10 @@
 Procrastinator
 ======================
 
-Why do now what you could put off for later?
-
-Procrastinator is a simple queue built with Node.js. It asynchronously queues 
+Procrastinator is a simple delay queue built with Node.js. It asynchronously queues 
 messages for some time, and calls a webhook when time's up. 
 
-Like a good procrastinator. It doesn't perform any actual work. It just puts it off for later.
+It doesn't perform any actual work. It just puts it off for later.
 
 
 ## Why Procrastinate?
