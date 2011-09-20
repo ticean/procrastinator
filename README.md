@@ -36,6 +36,7 @@ uses your $HOME directory, which can make things easier to manage.
     sudo apt-get update
     sudo apt-get install git-core curl build-essential openssl libssl-dev
     git clone https://github.com/joyent/node.git && cd node
+    git checkout v0.4.11
     ./configure
     make
     sudo make install
