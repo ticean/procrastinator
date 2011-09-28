@@ -2,4 +2,4 @@
 /cert/certificate.pem
 /cert/certrequest.csr
 /cert/privatekey.pem
-
+/node_modules
