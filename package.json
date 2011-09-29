@@ -1,0 +1,27 @@
+{
+  "name": "procrastinator",
+  "description": "Simple asynchronous delay queue built on Node.js",
+  "version": "0.1.0",
+  "author": "Ticean Bennett <tbenn@guidance.com>",
+  "repository": {
+      "type": "git",
+      "url": "http://github.com/ticean/procrastinator.git" 
+  },
+  "keywords": ["queue", "callback", "delay", "rest", "webservice", "nodejs"],
+  "dependencies": {
+    "journey": ">= 0.4.0-pre",
+    "hashlib": "1.0.x",
+    "optimist": "0.2.x",
+    "winston": "0.5.x"
+  },
+  "devDependencies": {
+    "vows": "0.5.x",
+    "api-easy": "0.2.x"
+  },
+  "scripts": {
+    "test": "vows --spec --isolate"
+  },
+  "bin": { "procrastinator": "./bin/server" },
+  "main": "./lib/procrastinator",
+  "engines": { "node": ">= 0.4.0" }
+}
