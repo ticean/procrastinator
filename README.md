@@ -1,7 +1,7 @@
 Procrastinator
 ======================
 
-Procrastinator is a simple delay queue built with Node.js. It asynchronously queues 
+Procrastinator is a simple delay queue built with Node.js. It asynchronously queues
 messages for some time, and calls a webhook when time's up. 
 
 It doesn't perform any actual work. It just puts it off for later.
@@ -54,6 +54,7 @@ Packages required for the app:
     npm install journey     # Routing helper
     npm install optimist    # Option Parameter Parsing
     npm install hashlib     # Provides SHA1 hashing for unique keys
+    npm install forever     # Keeps the app running as a service
 
 And for running the tests:
 
